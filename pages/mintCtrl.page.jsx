@@ -100,8 +100,11 @@ function MintComponent() {
                     args: [address, quantity],
                     value: (parseInt(_cost) * quantity).toString(), 
                     //gasPrice: parseGwei('15'),
-                    maxFeePerGas: parseGwei('110'),
-                    maxPriorityFeePerGas: parseGwei('110'),
+                    maxFeePerGas: parseGwei('20'),
+                    maxPriorityFeePerGas: parseGwei('20'),
+                    overrides: {
+                        gasLimit: 900000n,
+                    },
                 }); // Call the write function
                 //alert(`This would have minted ${quantity} NFTs!`);
             } catch (error) {

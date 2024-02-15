@@ -123,10 +123,14 @@
   position: relative;
 }
 
-.rainbowContainer button:hover{
-  background: rgba(255, 255, 255, 0.053); /* make this whatever you want */
-  border-radius: 10px;
-  cursor: pointer;
+.rainbowContainer:hover{
+  background-image: url(../public/connectH.png);
+}
+
+.connected:hover {
+  /* Background image for connected state */
+  background-image: url('../public/connected.png');
+  /* Other styles for the container in the connected state */
 }
 
 .rainbowContainer div {
