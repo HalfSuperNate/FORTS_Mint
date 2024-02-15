@@ -17,7 +17,7 @@ function Wallet() {
   return (
     <div className={styles.web3Container}>
       <div className={styles.topLogoContainer}>
-        <Image src="/topLogo.png" alt="Logo" className={styles.topLogo} width={500} height={500}/>
+        <Image src="/topLogo.png" alt="Logo" className={styles.topLogo} width={300} height={300}/>
       </div>
 
       <div

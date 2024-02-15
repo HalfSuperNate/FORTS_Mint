@@ -52,7 +52,10 @@
 
 .footerLogo {
   width: clamp(10px, 30px, 75px);
-  
+}
+
+.footerLogo:hover{
+  background: rgba(255, 255, 255, 0.231); /* make this whatever you want */
 }
 
 .topLogoContainer {
@@ -70,7 +73,9 @@
 
 .topLogo {
   width: 100%;
+  height: auto;
   max-width: 500px;
+  max-height: 500px;
 }
 
 .bottomImg {
@@ -118,6 +123,12 @@
   position: relative;
 }
 
+.rainbowContainer button:hover{
+  background: rgba(255, 255, 255, 0.053); /* make this whatever you want */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .rainbowContainer div {
   width: 100%;
 }
@@ -144,6 +155,11 @@
   margin: 10px 10px 0px;
   width: auto;
   height: 100%;
+}
+
+.arrowButton:hover{
+  background: rgba(255, 255, 255, 0.231); /* make this whatever you want */
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -156,6 +172,11 @@
   margin: 5px;
   height: 50%;
   width: auto;
+}
+
+.mintButton img:hover{
+  background: rgba(255, 255, 255, 0.231); /* make this whatever you want */
+  border-radius: 10px;
   cursor: pointer;
 }
 
