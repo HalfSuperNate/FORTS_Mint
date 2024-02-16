@@ -99,12 +99,14 @@ function MintComponent() {
                     //args: [walletAddress, quantity, 0, proof],
                     args: [address, quantity],
                     value: (parseInt(_cost) * quantity).toString(), 
+                    gas: BigInt(900000 * quantity),
                     //gasPrice: parseGwei('15'),
-                    maxFeePerGas: parseGwei('20'),
-                    maxPriorityFeePerGas: parseGwei('20'),
-                    overrides: {
-                        gasLimit: 900000n,
-                    },
+                    // maxFeePerGas: parseGwei('20'),
+                    // maxPriorityFeePerGas: parseGwei('20'),
+                    // overrides: {
+                    //     gasLimit: 900000,
+                    //     nonce: nonce || undefined,
+                    // },
                 }); // Call the write function
                 //alert(`This would have minted ${quantity} NFTs!`);
             } catch (error) {
