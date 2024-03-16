@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAccount, useWriteContract } from 'wagmi';
-import { parseGwei } from 'viem';
+//import { parseGwei } from 'viem';
 import { useIsMounted } from './useIsMounted';
 import { GetPaused, GetSupply, GetCost } from './readContract';
 import { _abi, _abiAddress, _listWallets, GetContractAddy } from './abiGet';

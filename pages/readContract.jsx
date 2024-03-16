@@ -58,16 +58,16 @@ export function GetCost() {
 //     return data;
 // }
 
-// export function IsHolder(_sender, _id) {
-//     const { data, isError, isLoading } = useReadContract({
-//         address: _abiAddress,
-//         abi: _abi,
-//         functionName: 'balanceOf',
-//         args: [_sender, _id],
-//     });
+export function IsHolder(_sender) {
+    const { data, isError, isLoading } = useReadContract({
+        address: _abiAddress,
+        abi: _abi,
+        functionName: 'balanceOf',
+        args: [_sender],
+    });
 
-//     return data;
-// }
+    return data;
+}
 
 // export function Exists(_id) {
 //     const { data, isError, isLoading } = useReadContract({
@@ -80,17 +80,17 @@ export function GetCost() {
 //     return data;
 // }
 
-export function AdminCheck(_sender) {
-    const { data, isError, isLoading } = useReadContract({
-        address: _abiAddress,
-        abi: _abi,
-        functionName: 'checkIfAdmin',
-        args: [],
-        account: _sender,
-    });
+// export function AdminCheck(_sender) {
+//     const { data, isError, isLoading } = useReadContract({
+//         address: _abiAddress,
+//         abi: _abi,
+//         functionName: 'checkIfAdmin',
+//         args: [],
+//         account: _sender,
+//     });
 
-    return data;
-}
+//     return data;
+// }
 
 // export async function GetMetadata(_id) {
 //     const { data: uri, isError, isLoading } = useReadContract({

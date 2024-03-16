@@ -1,14 +1,10 @@
+import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import React from 'react';
 import Wallet from './wallet.page';
 import Link from 'next/link';
 import Image from 'next/image';
-// import AdminComponent from './adminCtrl.page';
-// import { useAccount } from 'wagmi';
-// import { useIsMounted } from './useIsMounted';
-// import { AdminCheck } from './readContract';
 
 const iStyle_a = {
   left: '-35px'
@@ -19,9 +15,6 @@ const iStyle_b = {
 }
 
 const Home: NextPage = () => {
-  // const { address } = useAccount();
-  // const isAdmin = AdminCheck(address);
-  // const mounted = useIsMounted();
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +26,6 @@ const Home: NextPage = () => {
       <main className={styles.main}>
 
         <Wallet />
-        {/* {mounted ? isAdmin && <AdminComponent /> : null} */}
         
       </main>
 
