@@ -34,12 +34,12 @@ const Home: NextPage = () => {
       </div>
       
       <footer className={styles.footer}>
-        <Link href="https://testnets.opensea.io/assets/mumbai/0x401fd2d3f0d48ac2e9e9e4ae63589c801b855eff" rel="noopener noreferrer" target="_blank">
+        <Link href="https://testnets.opensea.io/assets/amoy/0x4499a746c918bf036c31b7229e40f8445e14cf74" rel="noopener noreferrer" target="_blank">
           <div className={styles.footerLogo}>
             <Image width={30} height={30} src="/opensea_icon.svg" alt="OpenSea"/>
           </div>
         </Link>
-        <Link href="https://mumbai.polygonscan.com/address/0x401fd2d3f0d48ac2e9e9e4ae63589c801b855eff" rel="noopener noreferrer" target="_blank">
+        <Link href="https://amoy.polygonscan.com/address/0x4499a746c918bf036c31b7229e40f8445e14cf74" rel="noopener noreferrer" target="_blank">
           <div className={styles.footerLogo}>
             <Image width={30} height={30} src="/polygonscan.svg" alt="Etherscan"/>
           </div>

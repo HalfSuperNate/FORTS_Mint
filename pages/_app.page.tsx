@@ -10,7 +10,8 @@ import {
   // optimism,
   // polygon,
   // zora,
-  polygonMumbai
+  //polygonMumbai,
+  polygonAmoy
 } from 'wagmi/chains';
 import { QueryClientProvider, QueryClient, } from '@tanstack/react-query';
 
@@ -24,7 +25,8 @@ const config = getDefaultConfig({
     //arbitrum, 
     //base, 
     //zora,
-    polygonMumbai
+    //polygonMumbai,
+    polygonAmoy
   ],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });

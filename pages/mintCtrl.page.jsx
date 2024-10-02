@@ -54,7 +54,7 @@ function MintComponent() {
     const _paused = GetPaused();
     const minQty = 1;
     const maxQty = 3;
-    const nativeToken = "MATIC"; // ETH or MATIC
+    const nativeToken = "POL"; // ETH or POL
     //const maxSupply = "Endless";ß
 
     const { writeContract } = useWriteContract();
