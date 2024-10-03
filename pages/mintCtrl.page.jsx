@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAccount, useWriteContract } from 'wagmi';
 //import { parseGwei } from 'viem';
 import { useIsMounted } from './useIsMounted';
-import { GetPaused, GetSupply, GetCost } from './readContract';
+import { GetPaused, GetSupply, GetCost, AdminCheck } from './readContract';
 import { _abi, _abiAddress, _listWallets, GetContractAddy } from './abiGet';
 // import { MerkleTree } from 'merkletreejs';
 // import { keccak256 } from 'ethers';
@@ -42,6 +42,7 @@ import Image from 'next/image';
 
 function MintComponent() {
     const { address } = useAccount();
+    var isAdmin = AdminCheck(address);
     const mounted = useIsMounted();
     const [quantity, setQuantity] = useState(1);
     //const [walletAddress, setWalletAddress] = useState(address);
@@ -78,14 +79,18 @@ function MintComponent() {
     // };
 
     const handleMintClick = () => {
+        let _isAdmin = isAdmin;
         // Perform minting logic here
         if (!address) {
             alert(`Error: Not Connected`);
             return;
         }
-        if (_paused == true){
+        if (_paused == true && !_isAdmin){
             alert(`Error: Paused`);
             return;
+        }
+        if (_isAdmin){
+            _cost = 0;
         }
         // if (walletAddress.length !== 42) {
         //     alert(`Confirm your send to ${address} then press Mint to complete transaction.`);

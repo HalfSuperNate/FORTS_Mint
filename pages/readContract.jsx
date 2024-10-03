@@ -80,17 +80,17 @@ export function IsHolder(_sender) {
 //     return data;
 // }
 
-// export function AdminCheck(_sender) {
-//     const { data, isError, isLoading } = useReadContract({
-//         address: _abiAddress,
-//         abi: _abi,
-//         functionName: 'checkIfAdmin',
-//         args: [],
-//         account: _sender,
-//     });
+export function AdminCheck(_sender) {
+    const { data, isError, isLoading } = useReadContract({
+        address: _abiAddress,
+        abi: _abi,
+        functionName: 'checkIfAdmin',
+        args: [],
+        account: _sender,
+    });
 
-//     return data;
-// }
+    return data;
+}
 
 // export async function GetMetadata(_id) {
 //     const { data: uri, isError, isLoading } = useReadContract({
