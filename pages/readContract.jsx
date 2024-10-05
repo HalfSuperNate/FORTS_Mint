@@ -47,6 +47,18 @@ export function GetCost() {
     return data;
 }
 
+export function GetNameCost() {
+    const { data, isError, isLoading } = useReadContract({
+        address: _abiAddress,
+        abi: _abi,
+        functionName: 'costName',
+        args: []
+        //account: _sender,
+    });
+
+    return data;
+}
+
 // export function GetMintPhase() {
 //     const { data, isError, isLoading } = useContractRead({
 //         address: _abiAddress,
@@ -86,6 +98,18 @@ export function AdminCheck(_sender) {
         abi: _abi,
         functionName: 'checkIfAdmin',
         args: [],
+        account: _sender,
+    });
+
+    return data;
+}
+
+export function IsSubjectOwner(_id, _sender) {
+    const { data, isError, isLoading } = useReadContract({
+        address: _abiAddress,
+        abi: _abi,
+        functionName: 'isSubjectOwnerAdmin',
+        args: [_id],
         account: _sender,
     });
 

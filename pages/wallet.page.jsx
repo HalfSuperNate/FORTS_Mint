@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useIsMounted } from './useIsMounted';
 import RestrictedPage from './restricted-page';
 import { IsHolder } from './readContract';
-  
+
 function Wallet() {
   const mounted = useIsMounted();
   const { address } = useAccount();
@@ -15,9 +15,29 @@ function Wallet() {
   const heldAmount = IsHolder(address);
   const [isHolder, setIsHolder] = useState(false);
 
+  // Effect to load stored state from localStorage on mount
   useEffect(() => {
-    // Check if address is not null or empty to determine if the wallet is connected
-    setIsConnected(!!address);
+    const storedIsConnected = localStorage.getItem('isConnected');
+    const storedIsHolder = localStorage.getItem('isHolder');
+    
+    if (storedIsConnected === 'true') {
+      setIsConnected(true);
+    }
+    
+    if (storedIsHolder === 'true') {
+      setIsHolder(true);
+    }
+  }, []); // Run only on initial render
+
+  // Effect for updating isConnected state
+  useEffect(() => {
+    if (address) {
+      setIsConnected(true);
+      localStorage.setItem('isConnected', 'true');
+    } else {
+      setIsConnected(false);
+      localStorage.removeItem('isConnected');
+    }
   }, [address]);
 
   // Effect for checking holder status when wallet is connected
@@ -26,18 +46,17 @@ function Wallet() {
     if (heldAmount) {
       heldCount = parseInt(heldAmount.toString());
     }
-    setIsHolder(heldCount > 0);
-  }, [isConnected]); // Dependency array changed to isConnected
-
-  // if (address != "0x0000000000000000000000000000000000000000") {
-  //   console.log(address);
-  //   console.log(isConnected);
-  // }
+    const isHolderStatus = heldCount > 0;
+    setIsHolder(isHolderStatus);
+    localStorage.setItem('isHolder', isHolderStatus.toString());
+  }, [heldAmount]); // Dependency array includes heldAmount
 
   return (
     <div className={styles.web3Container}>
       <div className={styles.topLogoContainer}>
-        <Image src="/topLogo.png" alt="Logo" className={styles.topLogo} width={300} height={300}/>
+        <a className={styles.topLogoContainer} href={"https://testnets.opensea.io/collection/fortunates"} target="_blank" rel="noopener noreferrer">
+          <Image src="/topLogo.png" alt="Logo" className={styles.topLogo} width={300} height={300} />
+        </a>
       </div>
 
       <div
@@ -48,7 +67,7 @@ function Wallet() {
         <ConnectButton label="" accountStatus="" chainStatus="none" showBalance={false} />
       </div>
       <MintComponent />
-      { mounted ? isHolder && <RestrictedPage /> : null }
+      {mounted ? isHolder && <RestrictedPage /> : null}
     </div>
   );
 }

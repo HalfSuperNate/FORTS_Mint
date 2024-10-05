@@ -6,14 +6,6 @@ import Wallet from './wallet.page';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const iStyle_a = {
-  left: '-35px'
-}
-
-const iStyle_b = {
-  left: '35px'
-}
-
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -29,9 +21,9 @@ const Home: NextPage = () => {
         
       </main>
 
-      <div className={styles.bottomImg}>
+      {/* <div className={styles.bottomImg}>
         <Image fill src="/bottomImg.png" alt="Logo" />
-      </div>
+      </div> */}
       
       <footer className={styles.footer}>
         <Link href="https://testnets.opensea.io/assets/amoy/0x4499a746c918bf036c31b7229e40f8445e14cf74" rel="noopener noreferrer" target="_blank">
@@ -42,6 +34,11 @@ const Home: NextPage = () => {
         <Link href="https://amoy.polygonscan.com/address/0x4499a746c918bf036c31b7229e40f8445e14cf74" rel="noopener noreferrer" target="_blank">
           <div className={styles.footerLogo}>
             <Image width={30} height={30} src="/polygonscan.svg" alt="Etherscan"/>
+          </div>
+        </Link>
+        <Link href="https://faucet.polygon.technology/" rel="noopener noreferrer" target="_blank">
+          <div className={styles.footerLogo}>
+            <Image width={30} height={30} src="/faucet.svg" alt="Faucet"/>
           </div>
         </Link>
         <Link href="https://twitter.com/EasyNFT_" rel="noopener noreferrer" target="_blank">

@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .main p, .main a {
@@ -74,11 +74,11 @@
 .topLogo {
   width: 100%;
   height: auto;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 300px;
+  max-height: 300px;
 }
 
-.bottomImg {
+/* .bottomImg {
   display: none;
   width: 100%;
   max-width: 608px;
@@ -86,7 +86,7 @@
   position: absolute;
   bottom: 0;
   z-index: 0;
-}
+} */
 
 .rainbowContainer {
   margin-top: 15px;
@@ -176,7 +176,7 @@
   margin: 5px;
   width: 65vw;
   height: auto;
-  max-width: 325px;
+  max-width: 265px;
 }
 
 .mintButton img:hover{
@@ -216,11 +216,41 @@
   z-index: 1;
 }
 
+.holderContentContainer a {
+  text-align: center;
+}
+
 .holderContent {
   margin: 0px;
   color: white;
   font-size: 1em;
   text-align: center;
+  border-bottom: 2px solid #ff6347;
+}
+
+.nameSubjectContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nameSubjectContainer p {
+  text-align: center;
+}
+
+.nameSubjectContainer input {
+  width: 100%;
+  max-width: 400px;
+  max-height: 20px;
+  padding: 10px;
+  font-size: 16px;
+  
+  /* Center text horizontally */
+  text-align: center;
+
+  /* Center text vertically */
+  line-height: normal;  /* Ensure line height is set to normal */
 }
 
 .adminContainer {
